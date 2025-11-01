@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form id="new-task-form"
+      action="{{ url_for('routes.list_tasks') }}"
+      method="post"
+      hx-post="{{ url_for('routes.list_tasks') }}"
+      hx-target="#task-list"
+      hx-swap="beforeend"
+      class="new-task">
+  <input type="text" name="title" placeholder="Add a task…" required />
+  <button type="submit">Add</button>
+</form>
+
+<ul id="task-list" class="tasks">
+  {% for t in tasks %}
+    {% include "_task_item.html" with context %}
+  {% else %}
+    <li class="empty">No tasks yet — add one above.</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

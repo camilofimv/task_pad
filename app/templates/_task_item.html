@@ -1,0 +1,23 @@
+<li id="task-{{ t[0] }}" class="task {% if t[2] %}done{% endif %}">
+    <span class="title">{{ t[1] }}</span>
+  
+    <div class="actions">
+      <!-- Toggle done (PATCH). We’ll accept form or JSON server-side -->
+      <form
+        hx-patch="{{ url_for('routes.update_task', task_id=t[0]) }}"
+        hx-target="#task-{{ t[0] }}"
+        hx-swap="outerHTML"
+        class="inline">
+        <input type="hidden" name="done" value="{{ 'false' if t[2] else 'true' }}">
+        <button type="submit">{{ 'Mark undone' if t[2] else 'Mark done' }}</button>
+      </form>
+  
+      <!-- Delete (DELETE) -->
+      <form
+      hx-delete="{{ url_for('routes.delete_task', task_id=t[0]) }}"
+      hx-target="closest li"
+      hx-swap="outerHTML"
+      class="inline">
+      <button type="submit" class="danger">Delete</button>
+    </form>
+    

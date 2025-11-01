@@ -1,0 +1,9 @@
+# Ignore virtual envs
+venv/
+__pycache__/
+
+# Ignore environment files
+.env
+
+# macOS junk
+.DS_Store

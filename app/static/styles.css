@@ -1,0 +1,18 @@
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+body { margin: 0; background: #f8fafc; color: #0f172a; }
+.container { max-width: 720px; margin: 0 auto; padding: 1.25rem; }
+h1 { margin: 0.25rem 0 1rem; }
+
+.new-task { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.new-task input { flex: 1; padding: 0.6rem 0.8rem; border: 1px solid #cbd5e1; border-radius: 0.5rem; }
+.new-task button { padding: 0.6rem 0.9rem; border: 0; border-radius: 0.5rem; background: #2563eb; color: white; }
+
+.tasks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.task { display: flex; align-items: center; justify-content: space-between;
+        background: white; border: 1px solid #e2e8f0; border-radius: 0.6rem; padding: 0.6rem 0.8rem; }
+.task.done .title { text-decoration: line-through; color: #64748b; }
+.actions { display: flex; gap: 0.5rem; }
+.inline { display: inline; }
+button { cursor: pointer; background: #334155; color: white; border: 0; border-radius: 0.5rem; padding: 0.4rem 0.7rem; }
+button.danger { background: #dc2626; }
+.empty { color: #94a3b8; padding: 0.8rem; background: #ffffff; border: 1px dashed #e2e8f0; border-radius: 0.6rem; }
